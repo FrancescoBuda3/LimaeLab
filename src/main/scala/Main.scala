@@ -1,22 +1,18 @@
-import scalafx.Includes._
 import scalafx.application.JFXApp3
+import scalafx.geometry.Insets
 import scalafx.scene.Scene
-import scalafx.scene.paint.Color._
-import scalafx.scene.shape.Rectangle
+import scalafx.scene.control.Label
+import scalafx.scene.layout.BorderPane
 
-object HelloStageDemo extends JFXApp3 {
+object HelloWorld extends JFXApp3 {
+
   override def start(): Unit = {
     stage = new JFXApp3.PrimaryStage {
-      title.value = "Hello Stage"
-      width = 600
-      height = 450
+      title = "Hello"
       scene = new Scene {
-        fill = LightGreen
-        content = new Rectangle {
-          x = 25
-          y = 40
-          width = 100
-          height = 100
+        root = new BorderPane {
+          padding = Insets(75)
+          center = new Label("Hello World")
         }
       }
     }
