@@ -4,7 +4,10 @@ version := "0.1"
 
 scalaVersion := "3.3.5"
 
-libraryDependencies += "org.scalafx" %% "scalafx" % "23.0.1-R34"
+libraryDependencies ++= Seq(
+    "org.scalafx" %% "scalafx" % "23.0.1-R34",
+    "com.github.sbt" % "junit-interface" % "0.13.2" % Test,
+)
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-feature")
 
