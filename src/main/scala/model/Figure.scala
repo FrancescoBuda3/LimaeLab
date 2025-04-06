@@ -11,6 +11,8 @@ trait Figure:
 
 class Rhyme(private val _name: String, private val endings: collection.immutable.Seq[String]) extends Figure:
     override def name = _name
-    override def check = e => endings
-        .map(f => f.toUpperCase())
-        .contains(e.toUpperCase())
+    override def check = e => endings.map(f => f.toUpperCase()).contains(e.toUpperCase())
+    
+class Repetition(private val rep: String) extends Figure:
+    override def name = rep
+    override def check = e => e.toUpperCase() == rep.toUpperCase()
