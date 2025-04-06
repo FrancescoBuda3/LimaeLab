@@ -9,10 +9,11 @@ trait Figure:
     def check: (String) => Boolean
     def name: String
 
-class Rhyme(private val _name: String, private val endings: collection.immutable.Seq[String]) extends Figure:
+case class Rhyme(private val _name: String, private val _endings: collection.immutable.Seq[String]) extends Figure:
     override def name = _name
-    override def check = e => endings.map(f => f.toUpperCase()).contains(e.toUpperCase())
+    override def check = e => _endings.map(f => f.toUpperCase()).contains(e.toUpperCase())
+    def endings = _endings
     
-class Repetition(private val rep: String) extends Figure:
+case class Repetition(private val rep: String) extends Figure:
     override def name = rep
     override def check = e => e.toUpperCase() == rep.toUpperCase()

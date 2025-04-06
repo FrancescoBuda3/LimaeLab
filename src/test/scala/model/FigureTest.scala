@@ -5,8 +5,8 @@ import org.junit.Assert.*
 
 class FigureTest:
 
-    val rh: Figure = Rhyme("A", List("ide", "why"))
-    val re: Figure = Repetition("Railroad Ride")
+    var rh: Figure = Rhyme("A", List("ide", "why"))
+    var re: Figure = Repetition("Railroad Ride")
     
     @Test def testCheckRhyme: Unit = 
         assertTrue(rh.check("ide") && !rh.check("ine"))
@@ -19,3 +19,10 @@ class FigureTest:
     
     @Test def testNameRepetition: Unit =
         assertTrue(re.name == "Railroad Ride")
+    
+    @Test def testEquality: Unit = 
+        assertTrue(rh == Rhyme("A", List("ide", "why")) && !(re == Repetition("Rilroad Ride")))
+    
+    @Test def testUpdateRhyme: Unit = 
+        rh = Rhyme(rh.name, rh.asInstanceOf[Rhyme].endings :+ "my")
+        assertTrue(rh.check("my"))
