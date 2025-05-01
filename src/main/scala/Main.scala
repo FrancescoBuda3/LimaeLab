@@ -4,7 +4,7 @@ import scalafx.scene.Scene
 import scalafx.scene.control.Label
 import scalafx.scene.layout.BorderPane
 
-object HelloWorld extends JFXApp3 {
+object Main extends JFXApp3 {
 
   override def start(): Unit = {
     stage = new JFXApp3.PrimaryStage {
