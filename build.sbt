@@ -9,6 +9,8 @@ libraryDependencies ++= Seq(
 )
 libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.19"
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.19" % "test"
+libraryDependencies += "org.apache.xmlgraphics" % "fop" % "2.10"
+libraryDependencies += "net.sf.offo" % "fop-hyph" % "2.0"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-encoding", "utf8", "-feature")
 

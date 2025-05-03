@@ -1,7 +1,7 @@
 package model
 
 import model.Split.{Space, Syllable}
-import model.VerseADT.*
+import model.VerseType.*
 
 import org . scalatest . matchers . should . Matchers .*
 
