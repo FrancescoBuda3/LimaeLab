@@ -1,9 +1,9 @@
 package model
 
 import model.Split.{Space, Syllable}
-import model.VerseType.*
+import model.Verse.*
 
-import org . scalatest . matchers . should . Matchers .*
+import org.scalatest.matchers.should.Matchers.*
 
 given dummySillabifier: (String => Seq[Split]) = _
   .split(" ")

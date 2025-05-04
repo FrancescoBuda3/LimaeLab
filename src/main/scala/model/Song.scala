@@ -1,8 +1,8 @@
 package model
 
-import model.VerseType.*
+import model.Verse.*
 
-object SongType:
+object Song:
   
   private case class SongImpl(title: Verse, verses: Seq[Verse])
 
