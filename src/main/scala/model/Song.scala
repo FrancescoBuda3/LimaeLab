@@ -11,5 +11,3 @@ object Song:
    */
   opaque type Song = SongImpl
   
-  def song(title: String)(using splitter: String => Seq[Split]): Song = 
-    SongImpl(verse(title)(using splitter), Seq.empty)

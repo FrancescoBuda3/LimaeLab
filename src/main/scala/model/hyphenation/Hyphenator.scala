@@ -11,7 +11,7 @@ object Hyphenator:
   private case class HyphenatorImpl(tree: HyphenationTree, remainChars: Int, pushChars: Int)
   
   opaque type Hyphenator = HyphenatorImpl
-  
+
   def hyphenator(language: Language, remainChars: Int, pushChars: Int): Hyphenator =
     val patternStream: InputStream = getClass.getResourceAsStream(s"/hyph/${language.code}.xml")
     require(patternStream != null, s"no hyphenation pattern for $language")
@@ -21,7 +21,8 @@ object Hyphenator:
 
   extension (h: Hyphenator)
     def hypenate(word: String): Seq[String] =
-      val pts = h.tree.hyphenate(word, h.remainChars, h.pushChars).getHyphenationPoints
+      val hy = Option(h.tree.hyphenate(word, h.remainChars, h.pushChars))
+      val pts = if hy.isDefined then hy.get.getHyphenationPoints else Array.empty[Int]
       (0 +: pts :+ word.length)
         .sliding(2)
         .map { case Array(s, e) => word.substring(s, e) }
