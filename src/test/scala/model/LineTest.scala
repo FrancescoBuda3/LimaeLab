@@ -13,3 +13,7 @@ class LineTest extends org.scalatest.flatspec.AnyFlatSpec:
   it should "have the length of the string it is created with" in:
     val line = Line("Hello, World!")
     assert(line.length == 13)
+    
+  it should "return the content it was created with" in:
+    val line = Line("Hello, World!")
+    assert(line.content == "Hello, World!")

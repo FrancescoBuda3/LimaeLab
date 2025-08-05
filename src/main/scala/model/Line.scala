@@ -7,6 +7,7 @@ object Line:
   
   extension (l: Line)
     def length: Int = l.length
+    def content: String = l
 
 
   def empty: Line = ""
