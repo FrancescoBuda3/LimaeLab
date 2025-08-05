@@ -1,8 +1,6 @@
 package model
 
 import hyphenation.Hyphenator.*
-
-import scala.util.matching.Regex
   
 object Verse:
 
@@ -30,8 +28,8 @@ object Verse:
   extension (v: Verse)
     def text: String = v.text
     def hyphPoints: Seq[Int] = v.hyphPoints
-    def addHyphPoint(hyphPoint: Int): Verse = VerseImpl(v.text, v.hyphPoints.appended(hyphPoint).sorted)
-    def removeHyphPoint(hyphPoint: Int): Verse = VerseImpl(v.text, v.hyphPoints.filter(_ != hyphPoint))
+    def addHyphenationPoint(hyphPoint: Int): Verse = VerseImpl(v.text, v.hyphPoints.appended(hyphPoint).sorted)
+    def removeHyphenationPoint(hyphPoint: Int): Verse = VerseImpl(v.text, v.hyphPoints.filter(_ != hyphPoint))
       
       
 

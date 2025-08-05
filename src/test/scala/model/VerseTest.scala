@@ -17,7 +17,7 @@ class VerseTest extends org.scalatest.flatspec.AnyFlatSpec:
     val verse = Verse.verse("all'alba sorgerò")
     val expectedHypenation = Seq(6, 8, 9, 12, 14, 16) // all'al-ba-sor-ge-rò
     verse.hyphPoints should be (expectedHypenation)
-    val hyphenatedVerse = verse.addHyphPoint(2)
+    val hyphenatedVerse = verse.addHyphenationPoint(2)
     val expectedHyphenation2: Seq[Int] = Seq(2, 6, 8, 9, 12, 14, 16) // al-l'al-ba-sor-ge-rò
     hyphenatedVerse.hyphPoints should be (expectedHyphenation2)
 
@@ -25,7 +25,7 @@ class VerseTest extends org.scalatest.flatspec.AnyFlatSpec:
     val verse = Verse.verse("si accende washington heights")
     val expectedHypenation = Seq(2, 3, 5, 8, 10, 11, 13, 18, 21, 22, 29) // si ac-cen-de wa-shing-ton heights
     verse.hyphPoints should be (expectedHypenation)
-    val hyphenatedVerse = verse.removeHyphPoint(2).removeHyphPoint(3)
+    val hyphenatedVerse = verse.removeHyphenationPoint(2).removeHyphenationPoint(3)
     val expectedHyphenation2: Seq[Int] = Seq(5, 8, 10, 11, 13, 18, 21, 22, 29) // (si ac)-cen-de wa-shing-ton heights
     hyphenatedVerse.hyphPoints should be (expectedHyphenation2)
 
