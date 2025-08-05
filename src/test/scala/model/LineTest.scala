@@ -6,4 +6,6 @@ class LineTest extends org.scalatest.flatspec.AnyFlatSpec:
     val line = Line("")
     assert(line.length == 0)
     
-  
+  it should "have length 0 when created empty" in:
+    val line = Line.empty
+    assert(line.length == 0)
