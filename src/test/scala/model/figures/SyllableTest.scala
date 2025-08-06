@@ -1,6 +1,5 @@
-package model
+package model.figures
 
-import model.Figures.Syllable
 import org.scalatest.matchers.should.Matchers.shouldBe
 
 class SyllableTest extends org.scalatest.flatspec.AnyFlatSpec:
