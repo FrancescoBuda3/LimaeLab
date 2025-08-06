@@ -1,14 +1,23 @@
 package model
 
 //import hyphenation.Hyphenator.*
-type Indexing = (Int, Int)
+opaque type Indexing = (Int, Int)
+
+object Indexing:
+  def apply(start: Int, end: Int): Indexing =
+    require (start >= 0 && end > start)
+    (start, end)
+
+  extension (i: Indexing)
+    def start: Int = i._1
+    def end: Int = i._2
 
 trait Verse extends Line:
   type Figure
   def rhetoric: Map[Indexing, Figure]
 
   
-object Verse: 
+object Verse:
   ???
 
 //  private case class VerseImpl(text: String, hyphPoints: Seq[Int])
